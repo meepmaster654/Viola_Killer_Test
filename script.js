@@ -114,7 +114,7 @@ function save() {
 }
 
 function clearSave() {
-  localStorage.clear('storageMoney');
-  localStorage.clear('storageU1Amount');
-  localStorage.clear('storageU2Amount');
+  localStorage.setItem('storageMoney', 0);
+  localStorage.setItem('storageU1Amount', 0);
+  localStorage.setItem('storageU2Amount', 0);
 }
