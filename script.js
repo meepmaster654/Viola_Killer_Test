@@ -74,6 +74,7 @@ function upgrade2() {
   }
 }
 
+setInterval(save, 10000);
 function save() {
   localStorage.setItem('storageMoney', moneys)
   localStorage.setItem('storageU1Amount', upgrade1Amount)
