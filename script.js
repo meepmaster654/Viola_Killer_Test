@@ -26,8 +26,11 @@ function loadUpgrades() {
   if (upgrade1Load != 0){
    upgrade1();
    upgrade1Load -= 1;
-   loadUpgrades();
-     }
+     };
+  if (upgrade2Load != 0) {
+    upgrade2();
+    upgrade2Load -= 1;
+  };
 }
 
 let upgrade1Cost = 100;
