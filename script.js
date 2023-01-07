@@ -1,4 +1,4 @@
-let moneys = localStorage.getItem('storageMoney') //sets money to 0
+let moneys = localStorage.getItem('storageMoney')/10; //sets money to 0
 let mpc = 1; //sets mps to 1
 function clicked() {
   moneys += mpc; //adds money per click to money
@@ -19,6 +19,14 @@ function moneyPerSecond(){
   moneys += mps/10;//adds 1/10 of money per second to your money
   moneys = Math.round(10*moneys)/10; //rounds money to nerest 10th
   document.getElementById("moneyYouHave").innerHTML = moneys; // displays how much money you have
+}
+let upgrade1Load = localStorage.getItem('storageU1Amount');
+let upgrade2Load = localStorage.getItem('storageU2Amount');
+function loadUpgrades() {
+  if (upgrade1Load != 0){
+   upgrade1();
+   upgrade1Load -= 1;
+     }
 }
 
 let upgrade1Cost = 100;
@@ -67,8 +75,6 @@ function upgrade2() {
 
 function save() {
   localStorage.setItem('storageMoney', moneys)
-  localStorage.setItem('storageMPS', mps)
-  localStorage.setItem('storageMPC', mpc)
   localStorage.setItem('storageU1Amount', upgrade1Amount)
   localStorage.setItem('storageU2Amount',upgrade2Amount)
 }
