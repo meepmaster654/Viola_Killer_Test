@@ -27,3 +27,10 @@ body {
   border: 20px inset #88ff68;
   margin: 0 0 10px 0;
 }
+
+#loadSave {
+  padding:0px 10px;
+  background-color: #ff6868;
+  border: 20px inset #88ff68;
+  margin: 0 0 10px 0;
+}
