@@ -23,9 +23,10 @@ function moneyPerSecond(){
 let upgrade1Load = localStorage.getItem('storageU1Amount');
 let upgrade2Load = localStorage.getItem('storageU2Amount');
 function loadUpgrades() {
-  while (upgrade1Load != 0){
+  if (upgrade1Load != 0){
    upgrade1();
    upgrade1Load -= 1;
+   loadUpgrades();
      }
 }
 
