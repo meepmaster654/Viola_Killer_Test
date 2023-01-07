@@ -20,15 +20,17 @@ function moneyPerSecond(){
   moneys = Math.round(10*moneys)/10; //rounds money to nerest 10th
   document.getElementById("moneyYouHave").innerHTML = moneys; // displays how much money you have
 }
+
 let upgrade1Load = localStorage.getItem('storageU1Amount');
 let upgrade2Load = localStorage.getItem('storageU2Amount');
+
 function loadUpgrades() {
   if (upgrade1Load != 0){
-   upgrade1();
+   upgrade1Free();
    upgrade1Load -= 1;
      };
   if (upgrade2Load != 0) {
-    upgrade2();
+    upgrade2Free();
     upgrade2Load -= 1;
   };
 }
@@ -56,6 +58,20 @@ function upgrade1() {
   }
 }
 
+function upgrade1Free() { 
+    mpc += upgrade1mpc;
+    upgrade1mpc *=1.2;
+    upgrade1Cost *= 1.5;
+    upgrade1Amount += 1;
+    upgrade1Cost = Math.round(10*upgrade1Cost)/10;
+    upgrade1mpc = Math.round(10*upgrade1mpc)/10;
+    mpc = Math.round(10*mpc)/10;
+    document.getElementById("upgrade1Cost").innerHTML = upgrade1Cost;
+    document.getElementById("upgrade1mpc").innerHTML = upgrade1mpc;
+    document.getElementById("mpc").innerHTML = mpc;
+    document.getElementById("upgrade1Amount").innerHTML = upgrade1Amount;
+}
+
 let upgrade2Cost = 100;
 let upgrade2mps = 1;
 let upgrade2Amount = 0;
@@ -75,6 +91,19 @@ function upgrade2() {
     document.getElementById("upgrade2mps").innerHTML = upgrade2mps;
     document.getElementById("upgrade2Amount").innerHTML = upgrade2Amount;
   }
+}
+
+function upgrade2Free() {
+    upgrade2Cost *= 1.5;
+    mps += upgrade2mps;
+    upgrade2mps *= 1.4;
+    upgrade2Amount += 1;
+    upgrade2mps = Math.round(10*upgrade2mps)/10;
+    mps = Math.round(10*mps)/10;
+    document.getElementById("upgrade2Cost").innerHTML = upgrade2Cost;
+    document.getElementById("mps").innerHTML = mps;
+    document.getElementById("upgrade2mps").innerHTML = upgrade2mps;
+    document.getElementById("upgrade2Amount").innerHTML = upgrade2Amount;
 }
 
 setInterval(save, 10000);
