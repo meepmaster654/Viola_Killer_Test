@@ -108,7 +108,13 @@ function upgrade2Free() {
 
 setInterval(save, 10000);
 function save() {
-  localStorage.setItem('storageMoney', moneys)
-  localStorage.setItem('storageU1Amount', upgrade1Amount)
-  localStorage.setItem('storageU2Amount',upgrade2Amount)
+  localStorage.setItem('storageMoney', moneys);
+  localStorage.setItem('storageU1Amount', upgrade1Amount);
+  localStorage.setItem('storageU2Amount',upgrade2Amount);
+}
+
+function clearSave() {
+  localStorage.clear('storageMoney');
+  localStorage.clear('storageU1Amount');
+  localStorage.clear('storageU2Amount');
 }
