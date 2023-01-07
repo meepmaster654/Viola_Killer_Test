@@ -1,5 +1,6 @@
 let moneys = 0;
-moneys + localStorage.getItem('storageMoney'); //sets money to 0
+let saveMoney = localStorage.getItem('storageMoney'); //sets money to 0
+moneys + saveMoney;
 let mpc = 1; //sets mps to 1
 function clicked() {
   moneys += mpc; //adds money per click to money
