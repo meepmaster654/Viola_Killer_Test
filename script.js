@@ -1,9 +1,9 @@
 let testMoney = localStorage.getItem('storageMoney'); 
 
 if (testMoney === undefined) {
-  let moneys = 0;
+  var moneys = 0;
 } else {
-  let moneys = localStorage.getItem('storageMoney');
+  var moneys = localStorage.getItem('storageMoney');
 }
 
 let mpc = 1; //sets mps to 1
