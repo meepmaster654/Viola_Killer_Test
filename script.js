@@ -35,6 +35,13 @@ function loadUpgrades() {
   };
 }
 
+function loadUpgradesBulk() {
+  loadUpgradea();
+  loadUpgrades();
+  loadUpgrades();
+  loadUpgrades();
+  loadUpgrades();
+}
 let upgrade1Cost = 100;
 let upgrade1mpc = 1;
 let upgrade1Amount = 0;
