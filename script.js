@@ -32,13 +32,21 @@ let upgrade1Load = localStorage.getItem('storageU1Amount');
 let upgrade2Load = localStorage.getItem('storageU2Amount');
 
 function loadUpgrades() {
-  if (upgrade1Load != 0){
-   upgrade1Free();
-   upgrade1Load -= 1;
-     };
-  if (upgrade2Load != 0) {
-    upgrade2Free();
-    upgrade2Load -= 1;
+  if (upgrade1Load === undefined) {
+    localStorage.setItem('storageU1Amount', 0);
+  } else {
+    if (upgrade1Load != 0){
+    upgrade1Free();
+     upgrade1Load -= 1;
+    };
+  };
+  
+  if (upgrade2Load === undefined) {
+    localStorage.setItem('storageU2amount', 0)
+  } else {
+    if (upgrade2Load != 0) {
+      upgrade2Free();
+      upgrade2Load -= 1;
   };
 }
 
