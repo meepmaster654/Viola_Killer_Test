@@ -1,10 +1,6 @@
-let testMoney = localStorage.getItem('storageMoney'); 
 
-if (testMoney === undefined) {
-  var moneys = 0;
-} else {
-  var moneys = localStorage.getItem('storageMoney');
-}
+let moneys = localStorage.getItem('storageMoney');
+
 
 let mpc = 1; //sets mps to 1
 function clicked() {
@@ -32,22 +28,14 @@ let upgrade1Load = localStorage.getItem('storageU1Amount');
 let upgrade2Load = localStorage.getItem('storageU2Amount');
 
 function loadUpgrades() {
-  if (upgrade1Load === undefined) {
-    localStorage.setItem('storageU1Amount', 0);
-  } else {
     if (upgrade1Load != 0){
     upgrade1Free();
-     upgrade1Load -= 1;
+    upgrade1Load -= 1;
     };
-  };
-  
-  if (upgrade2Load === undefined) {
-    localStorage.setItem('storageU2amount', 0)
-  } else {
     if (upgrade2Load != 0) {
       upgrade2Free();
       upgrade2Load -= 1;
-  };
+    };
 }
 
 function loadUpgradesBulk() {
